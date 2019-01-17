@@ -1,3 +1,5 @@
-echo "Placing mark $1 at $PWD"
-echo "$1:$PWD" >> ~/.marks 
-sed -i "s@$1:.*@$1:$PWD@g" ~/.marks
+echo "Placing mark '$1' at $PWD"
+regex="$1:.*"
+echo "REGEX $regex"
+sed -i "/$1:.*/d" ~/.marks > ~/.marks
+echo "$1:$PWD" >> ~/.marks
