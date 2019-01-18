@@ -1,2 +1,2 @@
-path=$(grep $1:.* ~/.marks | gsed s/$1://)
+path=$(grep ^$1:.* ~/.marks | gsed s/$1://)
 echo $path
