@@ -1,13 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation.  
 export ZSH="/Users/erikrosengren/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster2"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -93,3 +93,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ "$TMUX" = "" ]; then tmux; fi
+alias pgit="cd ~/Programmering/Git"
+alias plocal="cd ~/Programmering/Local"
+alias reload=". ~/.zshrc"
+alias tkill= "tmux kill-server"
+alias m="~/Customization/PlaceMarkMacOS.sh"
+function j(){
+	cd $(~/Customization/GotoMarkMacOS.sh $1)
+	echo "Going to mark $1"
+}
