@@ -94,7 +94,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export EDITOR=nvim
+
 if [ "$TMUX" = "" ]; then tmux; fi
+alias vi="nvim"
+alias vim="nvim"
 alias pgit="cd ~/Programmering/Git"
 alias plocal="cd ~/Programmering/Local"
 alias reload=". ~/.zshrc"
