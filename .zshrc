@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=nvim
+KEYTIMEOUT=1
 
 if [ "$TMUX" = "" ]; then tmux; fi
 alias vi="nvim"

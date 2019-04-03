@@ -16,17 +16,23 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" Plugin 'vim-syntastic/syntastic'
+
+Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,9 +52,11 @@ filetype plugin indent on    " required
 syntax on
 set number
 filetype indent plugin on
-set smartindent 
 set tabstop=4
+set shiftwidth=4
+set smartindent 
 set encoding=utf-8
 set bs=2
+set timeoutlen=1000 ttimeoutlen=0
 
 au BufReadPost,BufNewFile *.md,*.txt,*.tex set spell spelllang=en_us
