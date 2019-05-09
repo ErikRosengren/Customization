@@ -9,6 +9,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'frazrepo/vim-rainbow'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -58,5 +60,11 @@ set smartindent
 set encoding=utf-8
 set bs=2
 set timeoutlen=1000 ttimeoutlen=0
+let g:rainbow_active = 1
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 au BufReadPost,BufNewFile *.md,*.txt,*.tex set spell spelllang=en_us
