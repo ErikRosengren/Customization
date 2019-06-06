@@ -61,6 +61,7 @@ ZSH_THEME="agnoster2"
 plugins=(
   git
   docker
+  virtualenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,7 +106,9 @@ alias plocal="cd ~/Programmering/Local"
 alias reload=". ~/.zshrc"
 alias tkill= "tmux kill-server"
 alias m="~/Customization/PlaceMarkMacOS.sh"
+alias cc='cc -std=c11 -Wall -pedantic -Werror'
 function j(){
 	cd $(~/Customization/GotoMarkMacOS.sh $1)
 	echo "Going to mark $1"
 }
+tmux source-file ~/.tmux.conf
