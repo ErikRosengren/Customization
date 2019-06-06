@@ -11,6 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'frazrepo/vim-rainbow'
 
+Plugin 'junegunn/goyo.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -35,6 +37,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Plugin 'vim-syntastic/syntastic'
 
 Plugin 'sheerun/vim-polyglot'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,5 +71,21 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+let g:airline_theme='deus'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-t>     <Esc>:tabnew<CR>
 
 au BufReadPost,BufNewFile *.md,*.txt,*.tex set spell spelllang=en_us
