@@ -107,6 +107,9 @@ alias reload=". ~/.zshrc"
 alias tkill= "tmux kill-server"
 alias m="~/Customization/PlaceMarkMacOS.sh"
 alias cc='cc -std=c11 -Wall -pedantic -Werror'
+alias python="python3.7"
+alias python3="python3.7"
+alias py="python3.7"
 function j(){
 	cd $(~/Customization/GotoMarkMacOS.sh $1)
 	echo "Going to mark $1"
