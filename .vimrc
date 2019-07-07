@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -8,10 +8,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'frazrepo/vim-rainbow'
-
-Plugin 'junegunn/goyo.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -30,8 +26,6 @@ Plugin 'tpope/vim-fugitive'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'ycm-core/YouCompleteMe'
-
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " Plugin 'vim-syntastic/syntastic'
@@ -39,7 +33,14 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'sheerun/vim-polyglot'
 
 Plugin 'vim-airline/vim-airline'
+
 Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'ycm-core/YouCompleteMe'
+
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,7 +66,6 @@ set smartindent
 set encoding=utf-8
 set bs=2
 set timeoutlen=1000 ttimeoutlen=0
-let g:rainbow_active = 1
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
