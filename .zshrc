@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=nvim
+export LC_ALL=en_US.UTF-8
 KEYTIMEOUT=1
 
 if [ "$TMUX" = "" ]; then tmux; fi
@@ -106,12 +107,22 @@ alias plocal="cd ~/Programmering/Local"
 alias reload=". ~/.zshrc"
 alias tkill= "tmux kill-server"
 alias m="~/Customization/PlaceMarkMacOS.sh"
+alias c="~/Customization/Copy.sh"
 alias cc='cc -std=c11 -Wall -pedantic -Werror'
-alias python="python3.7"
 alias python3="python3.7"
 alias py="python3.7"
 function j(){
 	cd $(~/Customization/GotoMarkMacOS.sh $1)
 	echo "Going to mark $1"
+}
+function p(){
+	if [ $# -eq 1 ]
+	then
+		cp $(~/Customization/Paste.sh $1) .
+		echo "Pasting $1 to ."
+	else
+		cp $(~/Customization/Paste.sh $1) $2
+		echo "Pasting $1 to $2"
+	fi
 }
 tmux source-file ~/.tmux.conf
