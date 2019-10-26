@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 Plugin 'sheerun/vim-polyglot'
 
@@ -41,6 +41,8 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'ap/vim-css-color'
+
+Bundle 'OmniSharp/omnisharp-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,6 +60,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 syntax on
+colo elflord
 set number
 filetype indent plugin on
 set tabstop=4
@@ -81,9 +84,16 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
+" Close suggestions
+nnoremap <C-q> :pclose<CR>
+
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:OmniSharp_server_stdio = 1
+
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
