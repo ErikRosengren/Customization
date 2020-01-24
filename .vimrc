@@ -93,6 +93,8 @@ let g:airline_powerline_fonts = 1
 
 let g:OmniSharp_server_stdio = 1
 
+let g:ycm_python_binary_path = '/usr/local/bin/python3.7'
+
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 nnoremap <C-t>     :tabnew<CR>
