@@ -38,6 +38,8 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'ycm-core/YouCompleteMe'
 
+Plugin 'justinmk/vim-syntax-extra'
+
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'ap/vim-css-color'
@@ -84,20 +86,22 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
-" Close suggestions
-nnoremap <C-q> :pclose<CR>
 
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
 let g:OmniSharp_server_stdio = 1
-
 let g:ycm_python_binary_path = '/usr/local/bin/python3.7'
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <C-q> :pclose<CR>
+inoremap <C-q> :pclose<CR>
+
+nnoremap f :tab split \| YcmCompleter GoToDefinition<CR>
 
 au BufReadPost,BufNewFile *.md,*.txt,*.tex set spell spelllang=en_us
