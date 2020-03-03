@@ -32,6 +32,8 @@ Plugin 'vim-syntastic/syntastic'
 
 Plugin 'sheerun/vim-polyglot'
 
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
@@ -71,6 +73,7 @@ set smartindent
 set encoding=utf-8
 set bs=2
 set timeoutlen=1000 ttimeoutlen=0
+set updatetime=100
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
