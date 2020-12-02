@@ -111,6 +111,10 @@ alias c="~/Customization/Copy.sh"
 alias cc='cc -std=c11 -Wall -pedantic -Werror'
 alias python3="python3.7"
 alias py="python3.7"
+
+function mod(){
+	vim -p $files $(git status --porcelain | awk '{print $2}')
+}
 function j(){
 	cd $(~/Customization/GotoMarkMacOS.sh $1)
 	echo "Going to mark $1"
