@@ -128,9 +128,9 @@ function marks(){
 	cd $dest
 }
 
-alias cl='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ cat ~/.clip/@ | pbcopy'
-alias r='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ rm ~/.clip/@'
-alias b='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ nvim ~/.clip/@'
+alias cl='ls ~/.clip | fzf --preview="cat ~/.clip/{}" | xargs -I@ cat ~/.clip/@ | pbcopy'
+alias r='ls ~/.clip | fzf --preview="cat ~/.clip/{}" | xargs -I@ rm ~/.clip/@'
+alias b='ls ~/.clip | fzf --preview="cat ~/.clip/{}" | xargs -I@ nvim ~/.clip/@'
 
 function c(){
 	pbpaste > ~/.clip/$1
