@@ -107,10 +107,12 @@ alias plocal="cd ~/Programmering/Local"
 alias reload=". ~/.zshrc"
 alias tkill= "tmux kill-server"
 alias m="~/Customization/PlaceMarkMacOS.sh"
-alias c="~/Customization/Copy.sh"
 alias cc='cc -std=c11 -Wall -pedantic -Werror'
 alias python3="python3.7"
 alias py="python3.7"
+alias branches="git branch -v --sort=-committerdate | fzf | cut -c 3- | cut -d ' ' -f1 | xargs -I@ git checkout @"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 function mod(){
 	vim -p $files $(git status --porcelain | awk '{print $2}')
@@ -119,14 +121,18 @@ function j(){
 	cd $(~/Customization/GotoMarkMacOS.sh $1)
 	echo "Going to mark $1"
 }
-function p(){
-	if [ $# -eq 1 ]
-	then
-		cp $(~/Customization/Paste.sh $1) .
-		echo "Pasting $1 to ."
-	else
-		cp $(~/Customization/Paste.sh $1) $2
-		echo "Pasting $1 to $2"
-	fi
+
+function marks(){
+	dest=$(cat ~/.marks | fzf | awk -F: '{ print $2 }')
+	echo "Going to mark $dest"
+	cd $dest
+}
+
+alias cl='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ cat ~/.clip/@ | pbcopy'
+alias r='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ rm ~/.clip/@'
+alias b='ls ~/.clip | fzf --preview="cat /Users/erosengren/.clip/{}" | xargs -I@ nvim ~/.clip/@'
+
+function c(){
+	pbpaste > ~/.clip/$1
 }
 tmux source-file ~/.tmux.conf
