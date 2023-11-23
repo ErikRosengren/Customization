@@ -48,6 +48,8 @@ Plugin 'ap/vim-css-color'
 
 Bundle 'OmniSharp/omnisharp-vim'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -64,7 +66,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 syntax on
-colo elflord
+colo slate
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 set number
 filetype indent plugin on
 set tabstop=4
@@ -89,6 +93,7 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
+set clipboard=unnamedplus
 
 let g:airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
