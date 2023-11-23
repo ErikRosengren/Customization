@@ -111,6 +111,7 @@ alias cc='cc -std=c11 -Wall -pedantic -Werror'
 alias python3="python3.7"
 alias py="python3.7"
 alias branches="git branch -v --sort=-committerdate | fzf | cut -c 3- | cut -d ' ' -f1 | xargs -I@ git checkout @"
+alias stashes="git stash list | fzf | awk -F\{ '{print \$2}' | awk -F\} '{print \$1}' | xargs -I@ git stash apply @"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
