@@ -92,6 +92,7 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+nnoremap f gd
 
 set clipboard=unnamedplus
 
@@ -109,7 +110,5 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
 nnoremap <C-q> :pclose<CR>
 inoremap <C-q> :pclose<CR>
-
-nnoremap f :tab split \| YcmCompleter GoToDefinition<CR>
 
 au BufReadPost,BufNewFile *.md,*.txt,*.tex set spell spelllang=en_us
